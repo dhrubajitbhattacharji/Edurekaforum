@@ -60,9 +60,12 @@ const Userbox = styled(Box)(({ theme }) => ({
     },
 }));
 
+
 function NavBar() {
 
     const [open, setOpen] = useState(false);
+
+    const [createPost, setCreatePost] = useState(false);
 
     return (
         <MyAppBar>
@@ -81,7 +84,9 @@ function NavBar() {
                 </Search>
 
                 <Icons>
-                    <Typography>ASK QUESTION</Typography>
+                    <Box>
+                        <Typography>ASK QUESTION</Typography>
+                    </Box>
                     <Avatar
                         sx={{ height: "30px", width: "30px" }}
                         alt="Remy Sharp"
@@ -117,6 +122,7 @@ function NavBar() {
                     <MenuItem>Logout</MenuItem>
                 </Menu>
             </MyToolbar>
+            {}
         </MyAppBar>
     );
 }
