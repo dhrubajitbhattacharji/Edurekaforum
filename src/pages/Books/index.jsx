@@ -2,6 +2,8 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 import AllBooksWidget from '../../widgets/AllBooksWidget';
+import NavBar from '../../components/NavBar';
+
 
 function BookPage() {
 
@@ -10,12 +12,7 @@ function BookPage() {
 
     return (
         <Box>
-            <Box p="1rem 6%" textAlign="center" backgroundColor={palette.background.alt}>
-                <Typography fontFamily="serif" fontWeight="bold" fontSize={32} color="deepskyblue">
-                    EduHub
-                </Typography>
-            </Box>
-
+             <NavBar/>
             <Box width={isNonMobile ? "auto" : "90%"} my="1rem" mx="5%" display="flex" justifyContent="center">
                 <AllBooksWidget />
             </Box>

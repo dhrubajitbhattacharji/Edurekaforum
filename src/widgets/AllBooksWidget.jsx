@@ -4,10 +4,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import BookWidget from './BookWidget';
 
+
 function AllBooksWidget() {
 
     const [books, setBooks] = useState([]);
-    const isNonMobile = useMediaQuery("(max-width: 800px)");
+    // const isNonMobile = useMediaQuery("(max-width: 800px)");
     const getAllBooks = async () => {
         const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
         setBooks(res.data);
@@ -19,11 +20,13 @@ function AllBooksWidget() {
     }, []);
 
     return (
+        <>
         <Box width="100%" display="flex" flexWrap="wrap" justifyContent="space-around" rowGap="2rem">
             {books.map((book, i) =>
                 <BookWidget key={i} book={book} />
             )}
         </Box>
+        </>
     )
 }
 

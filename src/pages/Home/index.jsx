@@ -24,6 +24,7 @@ function Home() {
         {/* <CreatePostWidget /> */}
         <PostsWidget />
         <RightBar />
+        
       </Stack>
       <BottomNav />
     </Box>
