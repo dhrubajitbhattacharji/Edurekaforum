@@ -7,7 +7,7 @@ import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from 
 
 function LeftBar() {
     return (
-        <Box sx={{ display: { xs: "none", sm: "block" } }} p={2} flex={1.5}>
+        <Box sx={{ display: { xs: "none", sm: "block", borderRight: "1px solid gray" } }} p={2} flex={1.5}>
             <Box sx={{ position: "fixed" }}>
                 <List>
                     <ListItem disablePadding>
