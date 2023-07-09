@@ -15,6 +15,8 @@ import {
   import { MoreVert, ShareLocation } from "@mui/icons-material";
   import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
   import FavoriteIcon from "@mui/icons-material/Favorite";
+  import CommentIcon from '@mui/icons-material/Comment';
+  import ShareIcon from '@mui/icons-material/Share';
 
 function PostWidget({post}) {
     return (
@@ -49,7 +51,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, architecto?
           image={post1} //post.image
           alt="Paella dish"
         />
-
+<Box sx={{display: "flex", justifyContent: "space-evenly"}}>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <Checkbox
@@ -58,6 +60,19 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, architecto?
             />
           </IconButton>
         </CardActions>
+
+        <CardActions disableSpacing>
+          <IconButton aria-label="comment">
+          <CommentIcon/>
+          </IconButton>
+        </CardActions>
+
+        <CardActions disableSpacing>
+          <IconButton aria-label="share">
+          <ShareIcon/> 
+          </IconButton>
+        </CardActions>
+        </Box>
       </Card>
 </>    )
 }
