@@ -19,7 +19,7 @@ function Home() {
       <Stack
         direction="row"
         divider={<Divider orientation="vertical" />}
-        justifyContent="space-between" gap="2rem"
+        justifyContent="space-between" gap={!isNonMobile && "2rem"}
       >
         <LeftBar />
 

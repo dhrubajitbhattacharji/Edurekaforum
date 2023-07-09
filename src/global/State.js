@@ -41,6 +41,14 @@ export const dataSlice = createSlice({
                 state.user.saveposts = action.payload.saveposts;
             }
         },
+        setPost: (state, action) => {
+            const updatedPosts = state.posts.map((post) => {
+                if (post._id === action.payload.post._id)
+                    return action.payload.post;
+                return post;
+            });
+            state.posts = updatedPosts;
+        },
         setUpdatePost: (state, action) => {
             const updatedPost = state.posts.map((post) => {
                 if (post._id === action.payload.post._id) {
@@ -54,7 +62,7 @@ export const dataSlice = createSlice({
 });
 
 export const { setMode, setLogin, setLogout,
-    setPosts, setSavePosts, setUser,
+    setPosts, setSavePosts, setUser, setPost,
     setUpdatePost, setBooks, setAddtoCart } = dataSlice.actions;
 
 export default dataSlice.reducer;
