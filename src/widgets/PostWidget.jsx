@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RWebShare } from "react-web-share";
 import Flexbetween from '../components/Flexbetween';
-import ModelPopup from '../components/ModelPopup';
+// import ModelPopup from '../components/ModelPopup';
 import UserNav from '../components/UserNav';
 import WidgetWrapper from '../components/WidgetWrapper';
 

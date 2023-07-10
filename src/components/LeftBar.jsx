@@ -4,6 +4,8 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ReorderIcon from '@mui/icons-material/Reorder';
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+// import MenuItem from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function LeftBar() {
     return (
@@ -35,12 +37,17 @@ function LeftBar() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
+                    <Link style={{textDecoration:"none", color: "inherit"}} to="/books">
                         <ListItemButton>
+                       
                             <ListItemIcon>
                                 <MenuBookIcon />
                             </ListItemIcon>
                             <ListItemText primary="Bookstore" />
+                           
                         </ListItemButton>
+                        </Link>
+                        
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemButton>

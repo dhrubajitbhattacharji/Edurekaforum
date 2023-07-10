@@ -35,7 +35,7 @@ function AuthPage() {
                 <Typography
                     fontWeight="400" variant="h4" textAlign="center"
                     fontFamily="serif" sx={{ mb: "1.5rem" }}
-                >Welcome to eduHub community</Typography>
+                >Welcome to edureka community</Typography>
                 {role === 1 ?
                     <Box display="flex" justifyContent="space-around">
                         <Box display={!isNonMobileScreens && "none"}>
