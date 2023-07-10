@@ -25,14 +25,14 @@ function UserImage({ image, size, dpZoom = false }) {
                         objectFit: "cover", borderRadius: "50%", marginLeft: `${!isNonMobile && "10vw"}`,
                         marginTop: `${!isNonMobile && "4.8vh"}`
                     }} width={isNonMobile ? "100%" : "80%"} height={isNonMobile ? "100%" : "80%"}
-                        src={`${import.meta.env.VITE_REACT_APP_URL}/assets/${image}`} alt="user" />
+                        src={`${import.meta.env.VITE_REACT_APP_URL}/static/dp/${image}.jpg`} alt="user" />
                 </Box>
             </Modal>
 
             <Box width={size} height={size} onClick={() => dpZoom && setOpen((on) => !on)}>
                 <img style={{ objectFit: "cover", borderRadius: "50%" }}
                     width={size} height={size}
-                    src={`${import.meta.env.VITE_REACT_APP_URL}/assets/${image}`} alt="user" />
+                    src={`${import.meta.env.VITE_REACT_APP_URL}/static/dp/${image}.jpg`} alt="user" />
             </Box>
         </>
     )
