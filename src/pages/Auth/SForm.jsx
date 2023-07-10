@@ -79,7 +79,7 @@ function SForm() {
     const login = async (values) => {
 
         notificationBell();
-        const loggedIn = await axios.post(`${import.meta.env.VITE_REACT_APP_URL}/user/student/login`, values).catch(() => {
+        const loggedIn = await axios.post(`${import.meta.env.VITE_REACT_APP_URL}/user/login`, values).catch(() => {
             window.alert("Invalid authentication");
         });
 
@@ -241,7 +241,7 @@ function SForm() {
                                     sx={{ gridColumn: "span 2", input: { fontFamily: "serif", fontSize: "16px" } }} />
                                 <Box
                                     gridColumn="span 2"
-                                    border={`1px solid ${palette.neutral.medium}`}
+                                    // border={`1px solid ${palette.neutral.medium}`}
                                     borderRadius="5px"
                                     p="0.6rem"
                                     required

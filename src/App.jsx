@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
         <Suspense fallback={<LoadingScreen />}>
           <Routes>
-            <Route path='/' element={!isAuth ?<HomePage/> :<AuthPage />} />
+            <Route path='/' element={!isAuth ?<AuthPage />:<HomePage/> } />
             <Route path='/books' element={<BookPage />} />
           </Routes>
         </Suspense>

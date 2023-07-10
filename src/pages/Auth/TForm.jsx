@@ -67,7 +67,7 @@ function TForm() {
 
     const login = async (values, onSubmitProps) => {
 
-        const loggedIn = await axios.post(`${import.meta.env.VITE_REACT_APP_URL}/user/teacher/login`, values).catch((err) => {
+        const loggedIn = await axios.post(`${import.meta.env.VITE_REACT_APP_URL}/user/login`, values).catch((err) => {
             window.alert("Invalid authentication");
         });
 
@@ -197,7 +197,7 @@ function TForm() {
                                     </Select>
                                 </FormControl>
 
-                                <TextField autoComplete='off' label="Date of Birth" name="dateOfBirth" type="date"
+                                <TextField autoComplete='off' name="dateOfBirth" type="date"
                                     onBlur={handleBlur} onChange={handleChange}
                                     value={values.dateOfBirth}
                                     error={Boolean(touched.dateOfBirth) && Boolean(errors.dateOfBirth)}
@@ -227,7 +227,7 @@ function TForm() {
                                     sx={{ gridColumn: "span 2", input: { fontFamily: "serif", fontSize: "16px" } }} />
                                 <Box
                                     gridColumn="span 2"
-                                    border={`1px solid ${palette.neutral.medium}`}
+                                    // border={`1px solid ${palette.neutral.medium}`}
                                     borderRadius="5px"
                                     p="0.6rem"
                                     required
