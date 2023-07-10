@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import SearchIcon from "@mui/icons-material/Search";
-import { Link } from "react-router-dom";
 import {
   AppBar,
   Avatar,
@@ -13,6 +12,7 @@ import {
   styled,
 } from "@mui/material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import logo from "../assets/logo1.png";
 
 const MyAppBar = styled(AppBar)({
@@ -125,12 +125,14 @@ function NavBar() {
             horizontal: "left",
           }}
         >
-          <MenuItem>View Profile</MenuItem>
+          <MenuItem>
+            <Link to='/profile' style={{ textDecoration: "none", color: "inherit" }}> View Profile </Link>
+          </MenuItem>
           <MenuItem>Edit My account</MenuItem>
           <MenuItem>Logout</MenuItem>
         </Menu>
       </MyToolbar>
-      {}
+      { }
     </MyAppBar>
   );
 }

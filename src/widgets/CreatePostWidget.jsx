@@ -15,6 +15,8 @@ function CreatePostWidget() {
 
     const dispatch = useDispatch();
     const [isImage, setIsImage] = useState(false);
+    const [isBook, setIsBook] = useState(false);
+    const [book, setBook] = useState(null);
     const [image, setImage] = useState(null);
     const [post, setPost] = useState("");
     const { palette } = useTheme();
@@ -107,23 +109,64 @@ function CreatePostWidget() {
                 </Box>
             )}
 
+            {isBook && (
+                <Box border={`1px solid`}
+                    borderRadius="5px" mt="1rem" p="1rem">
+                    <Dropzone
+                        acceptedFiles=".jpg, .jpeg, .png"
+                        multiple={false}
+                        onDrop={(acceptedFiles) => setBook(acceptedFiles[0])}
+                    >
+                        {({ getRootProps, getInputProps }) => (
+                            <Flexbetween>
+                                <Box
+                                    {...getRootProps()}
+                                    border={`1px dashed`}
+                                    borderRadius="5px" p="1rem"
+                                    width="100%">
+                                    <input {...getInputProps()} />
+                                    {!book ? (
+                                        <p>Add Book Here</p>
+                                    ) : (
+                                        <Flexbetween>
+                                            <Typography>{book.name}</Typography>
+                                            <EditOutlined />
+                                        </Flexbetween>
+                                    )}
+                                </Box>
+                                {book && (
+                                    <IconButton onClick={() => setBook(null)}
+                                        sx={{ width: "15%" }}>
+                                        <DeleteOutline />
+                                    </IconButton>
+                                )}
+                            </Flexbetween>
+                        )}
+                    </Dropzone>
+                </Box>
+            )}
+
             <Divider sx={{ margin: "1.25rem 0" }} />
 
             <Flexbetween>
-                <Flexbetween gap="0.25rem" onClick={() => setIsImage((img) => !img)}>
+                <Flexbetween gap="0.25rem" onClick={() => {
+                    setIsImage((img) => !img)
+                    setIsBook(false)
+                }}>
                     <ImageOutlined />
                     <Typography fontFamily="serif" sx={{ cursor: "pointer" }}>Image</Typography>
                 </Flexbetween>
 
+                <Flexbetween gap="0.25rem" onClick={() => {
+                    setIsBook((img) => !img)
+                    setIsImage(false)
+                }}>
+                    <GifBoxOutlined />
+                    <Typography fontFamily="serif">Clip</Typography>
+                </Flexbetween>
+
                 {isNonMobile && (
                     <>
-                        <Tooltip title="Updated soon">
-                            <Flexbetween gap="0.25rem">
-                                <GifBoxOutlined />
-                                <Typography fontFamily="serif">Clip</Typography>
-                            </Flexbetween>
-                        </Tooltip>
-
                         <Tooltip title="Updated soon">
                             <Flexbetween gap="0.25rem">
                                 <AttachFileOutlined />

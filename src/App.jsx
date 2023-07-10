@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import "./App.css";
 import BookPage from "./pages/Books";
+import UserWidget from "./widgets/UserWidget";
 
 
 const AuthPage = lazy(() => import('./pages/Auth/index'));
@@ -35,8 +36,9 @@ function App() {
       <BrowserRouter>
         <Suspense fallback={<LoadingScreen />}>
           <Routes>
-            <Route path='/' element={!isAuth ?<AuthPage />:<HomePage/> } />
+            <Route path='/' element={!isAuth ? <AuthPage /> : <HomePage />} />
             <Route path='/books' element={<BookPage />} />
+            <Route path='/profile' element={<UserWidget />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

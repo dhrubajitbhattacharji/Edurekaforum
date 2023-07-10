@@ -1,15 +1,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { ChatBubbleOutlineRounded, FavoriteBorderOutlined, ShareOutlined } from '@mui/icons-material';
+import { ChatBubbleOutlineRounded, FavoriteBorderOutlined, FavoriteOutlined, ShareOutlined } from '@mui/icons-material';
 import { Box, Divider, IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RWebShare } from "react-web-share";
 import Flexbetween from '../components/Flexbetween';
 // import ModelPopup from '../components/ModelPopup';
+import axios from 'axios';
 import UserNav from '../components/UserNav';
 import WidgetWrapper from '../components/WidgetWrapper';
-
+import { setPost } from "../global/State";
 
 
 function PostWidget({ post }) {
@@ -71,13 +72,13 @@ function PostWidget({ post }) {
       <Divider />
       <Flexbetween gap="1rem">
         <Flexbetween gap="0.3rem"
-          onClick={AddRemoveLike} 
+          onClick={AddRemoveLike}
           sx={{ cursor: "pointer" }}>
           <IconButton>
             {isLiked ? (
               <FavoriteOutlined sx={{ color: "red" }} />
             ) : (
-            <FavoriteBorderOutlined />
+              <FavoriteBorderOutlined />
             )}
           </IconButton>
           <Typography fontFamily="serif" fontSize={15}>Like</Typography>
@@ -111,9 +112,9 @@ function PostWidget({ post }) {
       {isComments && (
         <Box>
           <Divider />
-          {post?.comments?.map((commentData) => (
+          {/* {post?.comments?.map((commentData) => (
                         <CommentWidget commentData={commentData} key={commentData._id} curPostId={curPostId} />
-                    ))}
+                    ))} */}
         </Box>
       )}
     </WidgetWrapper>
