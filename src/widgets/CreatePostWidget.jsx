@@ -55,7 +55,7 @@ function CreatePostWidget() {
             <Flexbetween gap={isNonMobile ? "1.5rem" : "0.5rem"}>
                 {/* <UserImage image={picturePath} size={60} /> */}
                 <InputBase
-                    placeholder="What's on your mood..."
+                    placeholder="Start typing to create a post.."
                     onChange={(e) => setPost(e.target.value)}
                     value={post}
                     required

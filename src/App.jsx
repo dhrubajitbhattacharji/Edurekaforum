@@ -2,6 +2,7 @@ import { CircularProgress, CssBaseline, Stack } from "@mui/material";
 import { Suspense, lazy } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import {AuthPage} from "./pages/Auth/index"
 // import { themeSettings } from "./theme";
 
 import "./App.css";
@@ -34,7 +35,7 @@ function App() {
       <BrowserRouter>
         <Suspense fallback={<LoadingScreen />}>
           <Routes>
-            <Route path='/' element={!isAuth ? <HomePage /> : <AuthPage />} />
+            <Route path='/' element={!isAuth ?<HomePage/> :<AuthPage />} />
             <Route path='/books' element={<BookPage />} />
           </Routes>
         </Suspense>
